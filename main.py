@@ -29,6 +29,8 @@ def infix_to_postfix(expression):
     for token in tokens:
         if token.isdigit():
             output.append(token)
+        elif token == '(':
+            stack.append(token)
         elif token == ')':
             while stack and stack[-1] != '(':
                 output.append(stack.pop())
